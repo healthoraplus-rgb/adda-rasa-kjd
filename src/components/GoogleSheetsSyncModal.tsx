@@ -149,8 +149,13 @@ export const GoogleSheetsSyncModal: React.FC<GoogleSheetsSyncModalProps> = ({
           {!syncState.isConnected ? (
             <div className="p-5 rounded-2xl border border-[#00288e]/20 bg-[#00288e]/5 space-y-3 text-center">
               <p className="text-[13px] text-[#444653]">
-                Untuk mengaktifkan sinkronisasi otomatis dan realtime ke Google Spreadsheet Anda, silakan hubungkan akun Google dengan izin akses Spreadsheet.
+                Hubungkan akun Google Anda untuk mengaktifkan sinkronisasi otomatis dan realtime ke Google Spreadsheet.
               </p>
+
+              <div className="flex items-center justify-center gap-1.5 text-[11px] text-[#006c49] font-medium bg-[#6cf8bb]/20 py-1 px-3 rounded-lg border border-[#6cf8bb]/40">
+                <span className="material-symbols-outlined text-[14px]">tab_unselected</span>
+                <span>Metode Pop-up Langsung: Aman & kompatibel untuk hosting Netlify tanpa masalah kuki pihak ketiga.</span>
+              </div>
 
               {/* Official Styled Google Sign-In Button */}
               <button
@@ -178,7 +183,7 @@ export const GoogleSheetsSyncModal: React.FC<GoogleSheetsSyncModalProps> = ({
                   />
                 </svg>
                 <span>
-                  {activeAction === 'Koneksi Google' ? 'Menghubungkan...' : 'Hubungkan dengan Google'}
+                  {activeAction === 'Koneksi Google' ? 'Membuka Jendela Pop-up...' : 'Hubungkan dengan Google (Pop-up)'}
                 </span>
               </button>
             </div>

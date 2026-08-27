@@ -654,14 +654,19 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
               </div>
 
               {syncState?.isConnected ? (
-                <button
-                  type="button"
-                  onClick={() => handleAction(onDisconnectGoogle, 'Putus Koneksi Google')}
-                  disabled={activeAction !== null}
-                  className="px-4 py-2 border border-[#ba1a1a]/40 text-[#ba1a1a] rounded-xl hover:bg-[#ffdad6]/40 text-[13px] font-bold transition-colors cursor-pointer disabled:opacity-50"
-                >
-                  Putus Akun Google
-                </button>
+                <div className="flex items-center gap-3">
+                  <span className="text-[12px] text-[#006c49] font-medium hidden md:inline">
+                    Terhubung ({syncState.userEmail || 'Google User'})
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => handleAction(onDisconnectGoogle, 'Putus Koneksi Google')}
+                    disabled={activeAction !== null}
+                    className="px-4 py-2 border border-[#ba1a1a]/40 text-[#ba1a1a] rounded-xl hover:bg-[#ffdad6]/40 text-[13px] font-bold transition-colors cursor-pointer disabled:opacity-50"
+                  >
+                    Putus Akun Google
+                  </button>
+                </div>
               ) : (
                 <button
                   type="button"
@@ -675,7 +680,7 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
                     <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z" />
                     <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z" />
                   </svg>
-                  <span>Hubungkan Google</span>
+                  <span>{activeAction === 'Koneksi Google' ? 'Membuka Pop-up...' : 'Hubungkan Google (Pop-up)'}</span>
                 </button>
               )}
             </div>
