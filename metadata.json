@@ -1,0 +1,8 @@
+{
+  "name": "ADDA RASA KJD Inventory System",
+  "description": "Comprehensive corporate inventory management system featuring dashboard metrics, product catalog management, stock reporting, and user authentication.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
